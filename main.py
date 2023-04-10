@@ -87,55 +87,55 @@ def delete_all():
 
 root = tk.Tk()
 root.title("Konversi Bilangan")
-root.geometry("400x300")
+root.geometry("700x400")
 root.configure(bg="#E8E8E8")
 
-dec_label = tk.Label(root, text="Desimal:")
+dec_label = tk.Label(root, text="Desimal:", font=("Helvetica", 14), bg="#E8E8E8", fg="black")
 dec_label.grid(row=0, column=0, padx=5, pady=5)
-dec_entry = tk.Entry(root)
+dec_entry = tk.Entry(root, font=("Helvetica", 14))
 dec_entry.grid(row=0, column=1, padx=5, pady=5)
 
-bin_label = tk.Label(root, text="Biner:")
+bin_label = tk.Label(root, text="Biner:", font=("Helvetica", 14), bg="#E8E8E8", fg="black")
 bin_label.grid(row=1, column=0, padx=5, pady=5)
-bin_entry = tk.Entry(root)
+bin_entry = tk.Entry(root, font=("Helvetica", 14))
 bin_entry.grid(row=1, column=1, padx=5, pady=5)
 
-oct_label = tk.Label(root, text="Oktal:")
+oct_label = tk.Label(root, text="Oktal:", font=("Helvetica", 14), bg="#E8E8E8", fg="black")
 oct_label.grid(row=2, column=0, padx=5, pady=5)
-oct_entry = tk.Entry(root)
+oct_entry = tk.Entry(root, font=("Helvetica", 14))
 oct_entry.grid(row=2, column=1, padx=5, pady=5)
 
-hex_label = tk.Label(root, text="Hexadesimal:")
+hex_label = tk.Label(root, text="Hexadesimal:", font=("Helvetica", 14), bg="#E8E8E8", fg="black")
 hex_label.grid(row=3, column=0, padx=5, pady=5)
-hex_entry = tk.Entry(root)
+hex_entry = tk.Entry(root, font=("Helvetica", 14))
 hex_entry.grid(row=3, column=1, padx=5, pady=5)
 
-str_label = tk.Label(root, text="String:")
+str_label = tk.Label(root, text="String:", font=("Helvetica", 14), bg="#E8E8E8", fg="black")
 str_label.grid(row=4, column=0, padx=5, pady=5)
-str_entry = tk.Entry(root)
+str_entry = tk.Entry(root, font=("Helvetica", 14))
 str_entry.grid(row=4, column=1, padx=5, pady=5)
 
-ascii_label = tk.Label(root, text="ASCII:")
+ascii_label = tk.Label(root, text="ASCII:", font=("Helvetica", 14), bg="#E8E8E8", fg="black")
 ascii_label.grid(row=5, column=0, padx=5, pady=5)
-ascii_entry = tk.Entry(root)
+ascii_entry = tk.Entry(root, font=("Helvetica", 14))
 ascii_entry.grid(row=5, column=1, padx=5, pady=5)
 
-dec_to_all_button = tk.Button(root, text="Konversi", command=dec_to_all)
+dec_to_all_button = tk.Button(root, text="Konversi", command=dec_to_all, bg="#4681f4", fg="white", font=("Helvetica", 14))
 dec_to_all_button.grid(row=0, column=2, padx=5, pady=5)
 
-bin_to_all_button = tk.Button(root, text="Konversi", command=bin_to_all)
+bin_to_all_button = tk.Button(root, text="Konversi", command=bin_to_all, bg="#4681f4", fg="white", font=("Helvetica", 14))
 bin_to_all_button.grid(row=1, column=2, padx=5, pady=5)
 
-oct_to_all_button = tk.Button(root, text="Konversi", command=oct_to_all)
+oct_to_all_button = tk.Button(root, text="Konversi", command=oct_to_all, bg="#4681f4", fg="white", font=("Helvetica", 14))
 oct_to_all_button.grid(row=2, column=2, padx=5, pady=5)
 
-hex_to_all_button = tk.Button(root, text="Konversi", command=hex_to_all)
+hex_to_all_button = tk.Button(root, text="Konversi", command=hex_to_all, bg="#4681f4", fg="white", font=("Helvetica", 14))
 hex_to_all_button.grid(row=3, column=2, padx=5, pady=5)
 
-str_to_ascii_button = tk.Button(root, text="Konversi ke ASCII", command=str_to_ascii)
+str_to_ascii_button = tk.Button(root, text="Konversi ke ASCII", command=str_to_ascii, bg="#4681f4", fg="white", font=("Helvetica", 14))
 str_to_ascii_button.grid(row=4, column=2, padx=5, pady=5)
 
-delete_all_button = tk.Button(root, text="Delete All", command=delete_all, bg="#FF0000")
+delete_all_button = tk.Button(root, text="Delete All", command=delete_all, bg="#FF0000", fg="white", font=("Helvetica", 14))
 delete_all_button.grid(row=0, column=3, padx=5, pady=5)
 
 root.mainloop()
