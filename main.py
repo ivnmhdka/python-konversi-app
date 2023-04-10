@@ -1,49 +1,59 @@
 import tkinter as tk
 
 def dec_to_all():
-    dec_value = int(dec_entry.get())
-    bin_value = bin(dec_value)[2:]
-    oct_value = oct(dec_value)[2:]
-    hex_value = hex(dec_value)[2:].upper()
-    ascii_value = chr(dec_value)
-    bin_entry.delete(0, tk.END)
-    oct_entry.delete(0, tk.END)
-    hex_entry.delete(0, tk.END)
-    ascii_entry.delete(0, tk.END)
-    bin_entry.insert(0, bin_value)
-    oct_entry.insert(0, oct_value)
-    hex_entry.insert(0, hex_value)
-    ascii_entry.insert(0, ascii_value)
+    dec_value = dec_entry.get()
+    if dec_value.isdigit(): 
+        dec_value = int(dec_value)
+        bin_value = bin(dec_value)[2:]
+        oct_value = oct(dec_value)[2:]
+        hex_value = hex(dec_value)[2:].upper()
+        ascii_value = chr(dec_value)
+        bin_entry.delete(0, tk.END)
+        oct_entry.delete(0, tk.END)
+        hex_entry.delete(0, tk.END)
+        ascii_entry.delete(0, tk.END)
+        bin_entry.insert(0, bin_value)
+        oct_entry.insert(0, oct_value)
+        hex_entry.insert(0, hex_value)
+        ascii_entry.insert(0, ascii_value)
+    else:
+        tk.messagebox.showerror("Error", "Input is not a valid integer")
 
 def bin_to_all():
     bin_value = bin_entry.get()
-    dec_value = int(bin_value, 2)
-    oct_value = oct(dec_value)[2:]
-    hex_value = hex(dec_value)[2:].upper()
-    ascii_value = chr(dec_value)
-    dec_entry.delete(0, tk.END)
-    oct_entry.delete(0, tk.END)
-    hex_entry.delete(0, tk.END)
-    ascii_entry.delete(0, tk.END)
-    dec_entry.insert(0, dec_value)
-    oct_entry.insert(0, oct_value)
-    hex_entry.insert(0, hex_value)
-    ascii_entry.insert(0, ascii_value)
+    if bin_value.isdigit():
+        dec_value = int(bin_value, 2)
+        oct_value = oct(dec_value)[2:]
+        hex_value = hex(dec_value)[2:].upper()
+        ascii_value = chr(dec_value)
+        dec_entry.delete(0, tk.END)
+        oct_entry.delete(0, tk.END)
+        hex_entry.delete(0, tk.END)
+        ascii_entry.delete(0, tk.END)
+        dec_entry.insert(0, dec_value)
+        oct_entry.insert(0, oct_value)
+        hex_entry.insert(0, hex_value)
+        ascii_entry.insert(0, ascii_value)
+    else:
+        tk.messagebox.showerror("Error", "Input is not a valid binary number")
 
 def oct_to_all():
     oct_value = oct_entry.get()
-    dec_value = int(oct_value, 8)
-    bin_value = bin(dec_value)[2:]
-    hex_value = hex(dec_value)[2:].upper()
-    ascii_value = chr(dec_value)
-    dec_entry.delete(0, tk.END)
-    bin_entry.delete(0, tk.END)
-    hex_entry.delete(0, tk.END)
-    ascii_entry.delete(0, tk.END)
-    dec_entry.insert(0, dec_value)
-    bin_entry.insert(0, bin_value)
-    hex_entry.insert(0, hex_value)
-    ascii_entry.insert(0, ascii_value)
+    if oct_value.isdigit():
+        dec_value = int(oct_value, 8)
+        bin_value = bin(dec_value)[2:]
+        hex_value = hex(dec_value)[2:].upper()
+        ascii_value = chr(dec_value)
+        dec_entry.delete(0, tk.END)
+        bin_entry.delete(0, tk.END)
+        hex_entry.delete(0, tk.END)
+        ascii_entry.delete(0, tk.END)
+        dec_entry.insert(0, dec_value)
+        bin_entry.insert(0, bin_value)
+        hex_entry.insert(0, hex_value)
+        ascii_entry.insert(0, ascii_value)
+    else:
+        tk.messagebox.showerror("Error", "Input is not a valid octal number")
 
 def hex_to_all():
     hex_value = hex_entry.get().upper()
@@ -78,6 +88,7 @@ def delete_all():
 root = tk.Tk()
 root.title("Konversi Bilangan")
 root.geometry("400x300")
+root.configure(bg="#E8E8E8")
 
 dec_label = tk.Label(root, text="Desimal:")
 dec_label.grid(row=0, column=0, padx=5, pady=5)
