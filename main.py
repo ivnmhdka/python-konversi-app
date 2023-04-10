@@ -67,6 +67,13 @@ def str_to_ascii():
         ascii_value += str(ord(char)) + " "
     ascii_entry.delete(0, tk.END)
     ascii_entry.insert(0, ascii_value)
+    
+def delete_all():
+    dec_entry.delete(0, tk.END)
+    bin_entry.delete(0, tk.END)
+    oct_entry.delete(0, tk.END)
+    hex_entry.delete(0, tk.END)
+    ascii_entry.delete(0, tk.END)
 
 root = tk.Tk()
 root.title("Konversi Bilangan")
@@ -116,5 +123,8 @@ hex_to_all_button.grid(row=3, column=2, padx=5, pady=5)
 
 str_to_ascii_button = tk.Button(root, text="Konversi ke ASCII", command=str_to_ascii)
 str_to_ascii_button.grid(row=4, column=2, padx=5, pady=5)
+
+delete_all_button = tk.Button(root, text="Delete All", command=delete_all, bg="#FF0000")
+delete_all_button.grid(row=0, column=3, padx=5, pady=5)
 
 root.mainloop()
