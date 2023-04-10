@@ -115,6 +115,8 @@ def delete_all():
     oct_entry.delete(0, tk.END)
     # Menghapus semua nilai pada inputan heksadesimal
     hex_entry.delete(0, tk.END)
+    # Menghapus semua nilai pada inputan string
+    str_entry.delete(0, tk.END)
     # Menghapus semua nilai pada inputan ASCII
     ascii_entry.delete(0, tk.END)
 
@@ -123,32 +125,32 @@ root.title("Konversi Bilangan")
 root.geometry("680x300")
 root.configure(bg="#E8E8E8")
 
-dec_label = tk.Label(root, text="Desimal:", font=("Helvetica", 14), bg="#E8E8E8", fg="black")
+dec_label = tk.Label(root, text="Desimal :", font=("Helvetica", 14), bg="#E8E8E8", fg="black")
 dec_label.grid(row=0, column=0, padx=5, pady=5)
 dec_entry = tk.Entry(root, font=("Helvetica", 14))
 dec_entry.grid(row=0, column=1, padx=5, pady=5)
 
-bin_label = tk.Label(root, text="Biner:", font=("Helvetica", 14), bg="#E8E8E8", fg="black")
+bin_label = tk.Label(root, text="Biner :", font=("Helvetica", 14), bg="#E8E8E8", fg="black")
 bin_label.grid(row=1, column=0, padx=5, pady=5)
 bin_entry = tk.Entry(root, font=("Helvetica", 14))
 bin_entry.grid(row=1, column=1, padx=5, pady=5)
 
-oct_label = tk.Label(root, text="Oktal:", font=("Helvetica", 14), bg="#E8E8E8", fg="black")
+oct_label = tk.Label(root, text="Oktal :", font=("Helvetica", 14), bg="#E8E8E8", fg="black")
 oct_label.grid(row=2, column=0, padx=5, pady=5)
 oct_entry = tk.Entry(root, font=("Helvetica", 14))
 oct_entry.grid(row=2, column=1, padx=5, pady=5)
 
-hex_label = tk.Label(root, text="Hexadesimal:", font=("Helvetica", 14), bg="#E8E8E8", fg="black")
+hex_label = tk.Label(root, text="Hexadesimal :", font=("Helvetica", 14), bg="#E8E8E8", fg="black")
 hex_label.grid(row=3, column=0, padx=5, pady=5)
 hex_entry = tk.Entry(root, font=("Helvetica", 14))
 hex_entry.grid(row=3, column=1, padx=5, pady=5)
 
-str_label = tk.Label(root, text="String:", font=("Helvetica", 14), bg="#E8E8E8", fg="black")
+str_label = tk.Label(root, text="String :", font=("Helvetica", 14), bg="#E8E8E8", fg="black")
 str_label.grid(row=4, column=0, padx=5, pady=5)
 str_entry = tk.Entry(root, font=("Helvetica", 14))
 str_entry.grid(row=4, column=1, padx=5, pady=5)
 
-ascii_label = tk.Label(root, text="ASCII:", font=("Helvetica", 14), bg="#E8E8E8", fg="black")
+ascii_label = tk.Label(root, text="ASCII :", font=("Helvetica", 14), bg="#E8E8E8", fg="black")
 ascii_label.grid(row=5, column=0, padx=5, pady=5)
 ascii_entry = tk.Entry(root, font=("Helvetica", 14))
 ascii_entry.grid(row=5, column=1, padx=5, pady=5)
