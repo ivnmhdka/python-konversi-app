@@ -97,14 +97,37 @@ def str_to_ascii():
     string_value = str_entry.get()
     # Menyimpan nilai ASCII dalam bentuk string
     ascii_value = ""
+    # Menyimpan nilai desimal, biner, oktal, dan heksadesimal
+    decimal_value = ""
+    binary_value = ""
+    octal_value = ""
+    hex_value = ""
     # Melakukan iterasi pada setiap karakter dalam string
     for char in string_value:
         # Mengambil nilai ASCII dari karakter saat ini menggunakan fungsi Python ord() (menghasilkan sebuah nilai integer berupa kode ASCII dari sebuah karakter)
-        ascii_value += str(ord(char)) + " "
-    # Menghapus nilai lama pada inputan ASCII
+        ascii_char = ord(char)
+        # Menambahkan nilai ASCII dalam bentuk string
+        ascii_value += str(ascii_char) + " "
+        # Menambahkan nilai desimal dalam bentuk string
+        decimal_value += str(ascii_char) + " "
+        # Menambahkan nilai biner dalam bentuk string
+        binary_value += bin(ascii_char)[2:] + " "
+        # Menambahkan nilai oktal dalam bentuk string
+        octal_value += oct(ascii_char)[2:] + " "
+        # Menambahkan nilai heksadesimal dalam bentuk string
+        hex_value += hex(ascii_char)[2:].upper() + " "
+    # Menghapus nilai lama pada inputan ASCII, desimal, biner, oktal, dan heksadesimal
     ascii_entry.delete(0, tk.END)
-    # Memasukkan nilai ASCII yang telah dihasilkan ke dalam inputan ASCII
+    dec_entry.delete(0, tk.END)
+    bin_entry.delete(0, tk.END)
+    oct_entry.delete(0, tk.END)
+    hex_entry.delete(0, tk.END)
+    # Memasukkan nilai ASCII, desimal, biner, oktal, dan heksadesimal yang telah dihasilkan ke dalam masing-masing inputan
     ascii_entry.insert(0, ascii_value)
+    dec_entry.insert(0, decimal_value)
+    bin_entry.insert(0, binary_value)
+    oct_entry.insert(0, octal_value)
+    hex_entry.insert(0, hex_value)
     
 def delete_all():
     # Menghapus semua nilai pada inputan desimal
@@ -122,7 +145,7 @@ def delete_all():
 
 root = tk.Tk()
 root.title("Konversi Bilangan")
-root.geometry("680x300")
+root.geometry("550x300")
 root.configure(bg="#E8E8E8")
 
 dec_label = tk.Label(root, text="Desimal :", font=("Helvetica", 14), bg="#E8E8E8", fg="black")
@@ -167,10 +190,10 @@ oct_to_all_button.grid(row=2, column=2, padx=5, pady=5)
 hex_to_all_button = tk.Button(root, text="Konversi", command=hex_to_all, bg="#4681f4", fg="white", font=("Helvetica", 14))
 hex_to_all_button.grid(row=3, column=2, padx=5, pady=5)
 
-str_to_ascii_button = tk.Button(root, text="Konversi ke ASCII", command=str_to_ascii, bg="#4681f4", fg="white", font=("Helvetica", 14))
+str_to_ascii_button = tk.Button(root, text="Konversi", command=str_to_ascii, bg="#4681f4", fg="white", font=("Helvetica", 14))
 str_to_ascii_button.grid(row=4, column=2, padx=5, pady=5)
 
 delete_all_button = tk.Button(root, text="Delete All", command=delete_all, bg="#FF0000", fg="white", font=("Helvetica", 14))
-delete_all_button.grid(row=0, column=3, padx=5, pady=5)
+delete_all_button.grid(row=5, column=2, padx=5, pady=5)
 
 root.mainloop()
