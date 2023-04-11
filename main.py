@@ -1,9 +1,10 @@
 import tkinter as tk
+import tkinter.messagebox
 
 def dec_to_all():
     # Mendapatkan nilai dari inputan desimal
     dec_value = dec_entry.get()
-    # Memeriksa apakah nilai tersebut merupakan angka (integer)
+    # Memeriksa apakah nilai tersebut merupakan angka (integer) (true)
     if dec_value.isdigit(): 
         # Mengkonversi nilai desimal menjadi biner, oktal, heksadesimal, dan ASCII
         dec_value = int(dec_value)
@@ -22,13 +23,13 @@ def dec_to_all():
         hex_entry.insert(0, hex_value)
         ascii_entry.insert(0, ascii_value)
     else:
-        # Menampilkan pesan error jika input bukan merupakan angka (integer)
-        tk.messagebox.showerror("Error", "Input is not a valid integer")
+        # Menampilkan pesan error jika input bukan merupakan angka (integer) (false)
+        tkinter.messagebox.showerror("Error", "Input is not a valid integer")
 
 def bin_to_all():
     # Mendapatkan nilai dari inputan biner
     bin_value = bin_entry.get()
-    # Memeriksa apakah nilai tersebut merupakan angka biner
+    # Memeriksa apakah nilai tersebut merupakan angka biner (true)
     if bin_value.isdigit():
         # Mengkonversi nilai biner menjadi desimal, oktal, heksadesimal, dan ASCII
         dec_value = int(bin_value, 2)
@@ -46,13 +47,13 @@ def bin_to_all():
         hex_entry.insert(0, hex_value)
         ascii_entry.insert(0, ascii_value)
     else:
-        # Menampilkan pesan error jika input bukan merupakan angka biner
-        tk.messagebox.showerror("Error", "Input is not a valid binary number")
+        # Menampilkan pesan error jika input bukan merupakan angka biner (false)
+        tkinter.messagebox.showerror("Error", "Input is not a valid binary number")
 
 def oct_to_all():
     # Mendapatkan nilai dari inputan oktal
     oct_value = oct_entry.get()
-    # Memeriksa apakah nilai tersebut merupakan angka oktal
+    # Memeriksa apakah nilai tersebut merupakan angka oktal (true)
     if oct_value.isdigit():
         # Mengkonversi nilai oktal menjadi desimal, biner, heksadesimal, dan ASCII
         dec_value = int(oct_value, 8)
@@ -70,8 +71,8 @@ def oct_to_all():
         hex_entry.insert(0, hex_value)
         ascii_entry.insert(0, ascii_value)
     else:
-        # Menampilkan pesan error jika input bukan merupakan angka oktal
-        tk.messagebox.showerror("Error", "Input is not a valid octal number")
+        # Menampilkan pesan error jika input bukan merupakan angka oktal (false)
+        tkinter.messagebox.showerror("Error", "Input is not a valid octal number")
 
 def hex_to_all():
     # Mendapatkan nilai dari inputan heksadesimal dan mengubahnya menjadi huruf kapital
@@ -102,7 +103,7 @@ def str_to_ascii():
     binary_value = ""
     octal_value = ""
     hex_value = ""
-    # Melakukan iterasi pada setiap karakter dalam string
+    # Untuk mendapatkan string yang mewakili karakter yang menunjuk ke integer
     for char in string_value:
         # Mengambil nilai ASCII dari karakter saat ini menggunakan fungsi Python ord() (menghasilkan sebuah nilai integer berupa kode ASCII dari sebuah karakter)
         ascii_char = ord(char)
